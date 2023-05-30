@@ -72,7 +72,50 @@ Output on 6.15.0:
     DEBUG    Activating rule `name` due to profile `basic`
     DEBUG    Activating rule `var-naming` due to profile `basic`
     DEBUG    Activating rule `yaml` due to profile `basic`
-    DEBUG    Activating rule `internal-error` due to profile `min
+    DEBUG    Activating rule `internal-error` due to profile `min`
+    DEBUG    Activating rule `load-failure` due to profile `min`
+    DEBUG    Activating rule `parser-error` due to profile `min`
+    DEBUG    Activating rule `syntax-check` due to profile `min`
+    DEBUG    Unloading warning rule due to not being part of production profile.
+    DEBUG    Unloading args rule due to not being part of production profile.
+    DEBUG    Unloading empty-string-compare rule due to not being part of production profile.
+    DEBUG    Unloading loop-var-prefix rule due to not being part of production profile.
+    DEBUG    Unloading no-log-password rule due to not being part of production profile.
+    DEBUG    Unloading no-prompting rule due to not being part of production profile.
+    DEBUG    Unloading no-same-owner rule due to not being part of production profile.
+    DEBUG    Unloading only-builtins rule due to not being part of production profile.
+    DEBUG    Unloading run-once rule due to not being part of production profile.
+    DEBUG    40/49 rules included in the profile
+    INFO     Set ANSIBLE_LIBRARY=/root/.cache/ansible-compat/ab8e18/modules:/root/.ansible/plugins/modules:/usr/share/ansible/plugins/modules
+    INFO     Set ANSIBLE_COLLECTIONS_PATH=/root/.cache/ansible-compat/ab8e18/collections:/root/.ansible/collections:/usr/share/ansible/collections
+    INFO     Set ANSIBLE_ROLES_PATH=/root/.cache/ansible-compat/ab8e18/roles:roles:/root/.ansible/roles:/usr/share/ansible/roles:/etc/ansible/roles
+    INFO     Discovered files to lint using: git -c safe.directory=/code/code/production ls-files --cached --others --exclude-standard -z
+    INFO     Excluded removed files using: git -c safe.directory=/code/code/production ls-files --deleted -z
+    DEBUG    Passed 'utils/util.yml' positional argument was identified as generic 'yaml' file kind.
+    DEBUG    Added role: roles/dummy (role)
+    INFO     Discovered files to lint using: git -c safe.directory=/code/code/production ls-files --cached --others --exclude-standard -z
+    INFO     Excluded removed files using: git -c safe.directory=/code/code/production ls-files --deleted -z
+    INFO     Executing syntax check on role roles/dummy (0.42s)
+    INFO     Executing syntax check on playbook site.yml (0.46s)
+    WARNING  Listing 1 violation(s) that are fatal
+    syntax-check[missing-file]: Unable to retrieve file contents
+    roles/dummy:1:1 Could not find or access '/tmp/utils/util.yml' on the Ansible Controller.
+    
+    DEBUG    Attempting to release lock 140114579110352 on /root/.cache/ansible-compat/5694d0/.lock
+    DEBUG    Lock 140114579110352 released on /root/.cache/ansible-compat/5694d0/.lock
+    
+    DEBUG    Determined rule-profile order: {'internal-error': (0, 'min'), 'load-failure': (1, 'min'), 'parser-error': (2, 'min'), 'syntax-check': (3, 'min'), 'command-instead-of-module': (4, 'basic'), 'command-instead-of-shell': (5, 'basic'), 'deprecated-bare-vars': (6, 'basic'), 'deprecated-local-action': (7, 'basic'), 'deprecated-module': (8, 'basic'), 'inline-env-var': (9, 'basic'), 'key-order': (10, 'basic'), 'literal-compare': (11, 'basic'), 'jinja': (12, 'basic'), 'no-free-form': (13, 'basic'), 'no-jinja-when': (14, 'basic'), 'no-tabs': (15, 'basic'), 'partial-become': (16, 'basic'), 'playbook-extension': (17, 'basic'), 'role-name': (18, 'basic'), 'schema': (19, 'basic'), 'name': (20, 'basic'), 'var-naming': (21, 'basic'), 'yaml': (22, 'basic'), 'name': (23, 'moderate'), 'name': (24, 'moderate'), 'name': (25, 'moderate'), 'spell-var-name': (26, 'moderate'), 'avoid-implicit': (27, 'safety'), 'latest': (28, 'safety'), 'package-latest': (29, 'safety'), 'risky-file-permissions': (30, 'safety'), 'risky-octal': (31, 'safety'), 'risky-shell-pipe': (32, 'safety'), 'galaxy': (33, 'shared'), 'ignore-errors': (34, 'shared'), 'layout': (35, 'shared'), 'meta-incorrect': (36, 'shared'), 'meta-no-tags': (37, 'shared'), 'meta-video-links': (38, 'shared'), 'meta-version': (39, 'shared'), 'meta-runtime': (40, 'shared'), 'no-changed-when': (41, 'shared'), 'no-changelog': (42, 'shared'), 'no-handler': (43, 'shared'), 'no-relative-paths': (44, 'shared'), 'max-block-depth': (45, 'shared'), 'max-tasks': (46, 'shared'), 'unsafe-loop': (47, 'shared'), 'avoid-dot-notation': (48, 'production'), 'sanity': (49, 'production'), 'fqcn': (50, 'production'), 'import-task-no-when': (51, 'production'), 'meta-no-dependencies': (52, 'production'), 'single-entry-point': (53, 'production'), 'use-loop': (54, 'production')}
+    Rule Violation Summary
+    count tag                        profile rule associated tags
+    1 syntax-check[missing-file] min     core, unskippable
+    
+    DEBUG    Registered VCS backend: bzr
+    DEBUG    Registered VCS backend: git
+    DEBUG    Registered VCS backend: hg
+    DEBUG    Registered VCS backend: svn
+    DEBUG    Found ansible-lint 6.15.0 dist
+    Failed after : 1 failure(s), 0 warning(s) on 4 files.
+    A new release of ansible-lint is available: 6.15.0 → 6.16.2
 
 
 Output on 6.14.4:
