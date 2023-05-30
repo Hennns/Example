@@ -1,0 +1,5 @@
+---
+
+- name: Dummy task
+  ansible.builtin.debug:
+    msg: "Dummy msg"

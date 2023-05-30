@@ -1,5 +1,4 @@
 ---
 
 - name: Import a task
-  ansible.builtin.import_tasks:
-    utils/util.yml
+  ansible.builtin.import_tasks: utils/util.yml
