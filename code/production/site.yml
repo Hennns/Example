@@ -1,0 +1,7 @@
+---
+
+- name: Run a role
+  hosts: localhost
+  gather_facts: false
+  roles:
+    - dummy
